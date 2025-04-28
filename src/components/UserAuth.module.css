@@ -1,0 +1,14 @@
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .signInButton {
+    margin-left: auto;
+  }
+  
+  .dialogInput {
+    margin-bottom: 16px;
+  }
+  

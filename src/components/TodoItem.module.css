@@ -1,0 +1,203 @@
+.todoItem {
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    background-color: white;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    flex-wrap: wrap;
+  }
+  
+  .todoItem:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .completed {
+    background-color: #f9fafb;
+  }
+  
+  .todoItemEdit {
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 8px;
+  }
+  
+  .formGroup {
+    margin-bottom: 12px;
+  }
+  
+  .formRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .formColumn {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .formColumn {
+      width: calc(50% - 8px);
+    }
+  
+    .todoItem {
+      flex-wrap: nowrap;
+    }
+  }
+  
+  .actionButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  
+  .iconButton {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .completedIcon {
+    color: #2563eb;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .incompleteIcon {
+    color: #6b7280;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .todoContent {
+    flex-grow: 1;
+    min-width: 0; /* Prevent text overflow */
+  }
+  
+  .todoTitle {
+    font-size: 16px;
+    color: #1f2937;
+    word-break: break-word;
+  }
+  
+  .completedText {
+    text-decoration: line-through;
+    color: #6b7280;
+  }
+  
+  .todoNotes {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 4px;
+    word-break: break-word;
+  }
+  
+  .todoMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+    font-size: 12px;
+  }
+  
+  .dueDate {
+    color: #6b7280;
+  }
+  
+  .overdue {
+    color: #dc2626;
+  }
+  
+  .priority {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .priorityIcon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .highPriority {
+    color: #dc2626;
+  }
+  
+  .mediumPriority {
+    color: #f59e0b;
+  }
+  
+  .lowPriority {
+    color: #16a34a;
+  }
+  
+  .todoActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+  
+  .starButton,
+  .editButton,
+  .deleteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .starredIcon {
+    color: #f59e0b;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .unstarredIcon {
+    color: #9ca3af;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .unstarredIcon:hover {
+    color: #f59e0b;
+  }
+  
+  .editButton {
+    color: #6b7280;
+  }
+  
+  .editButton:hover {
+    color: #2563eb;
+  }
+  
+  .deleteButton {
+    color: #6b7280;
+  }
+  
+  .deleteButton:hover {
+    color: #dc2626;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 640px) {
+    .todoActions {
+      margin-top: 8px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+  

@@ -1,0 +1,72 @@
+.app {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .mainContent {
+    padding: 80px 20px 20px 20px;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .contentWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .todoSection {
+    flex: 1;
+    min-width: 0; /* Prevent flex items from overflowing */
+  }
+  
+  .calendarSection {
+    width: 100%;
+  }
+  
+  .filterRow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .calendarToggle {
+    padding: 8px 16px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Tablet and desktop styles */
+  @media (min-width: 768px) {
+    .mainContent {
+      margin-left: 280px;
+      padding: 80px 30px 30px 30px;
+    }
+  
+    .filterRow {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    .contentWrapper {
+      flex-direction: row;
+    }
+  
+    .calendarSection {
+      width: 350px;
+      flex-shrink: 0;
+    }
+  }
+  
+  

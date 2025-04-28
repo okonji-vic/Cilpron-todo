@@ -1,0 +1,37 @@
+.addTodoForm {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .inputRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .titleInput {
+    flex-grow: 1;
+  }
+  
+  .expandedOptions {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .expandedOptions {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .datePicker,
+  .priorityDropdown {
+    width: 100%;
+  }
+  

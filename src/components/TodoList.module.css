@@ -1,0 +1,39 @@
+.todoList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .draggableItem {
+    cursor: move;
+  }
+  
+  .emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .emptyStateTitle {
+    color: #6b7280;
+  }
+  
+  .emptyStateSubtitle {
+    color: #9ca3af;
+    margin-top: 8px;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 640px) {
+    .emptyState {
+      padding: 20px 0;
+    }
+  }
+  

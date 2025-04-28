@@ -1,0 +1,80 @@
+.notifications {
+    position: relative;
+  }
+  
+  .notificationButton {
+    position: relative;
+    padding: 8px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .notificationButton:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .bellIcon {
+    width: 20px;
+    height: 20px;
+    color: #0b1221;
+  }
+  
+  .notificationBadge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: #ef4444;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .calloutContent {
+    padding: 16px;
+    max-width: 300px;
+  }
+  
+  .calloutTitle {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .remindersList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  
+  .reminderItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .calendarIcon {
+    width: 16px;
+    height: 16px;
+    color: #2563eb;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+  
+  .reminderTitle {
+    font-weight: 500;
+  }
+  
+  .reminderDueDate {
+    font-size: 14px;
+    color: #6b7280;
+    display: block;
+  }
+  
