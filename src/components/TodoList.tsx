@@ -54,7 +54,7 @@ const DraggableTodoItem: React.FC<DraggableTodoItemProps> = ({
 
   const [, drop] = useDrop({
     accept: "TODO_ITEM",
-    hover: (item: { index: number }, monitor) => {
+    hover: (item: { index: number }, _monitor) => {
       if (!ref.current) {
         return
       }

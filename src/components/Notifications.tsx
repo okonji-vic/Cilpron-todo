@@ -4,7 +4,7 @@ import { Calendar24Regular } from "@fluentui/react-icons"
 import { Alert20Regular } from "@fluentui/react-icons"
 // import { Bell24Regular } from "@fluentui/react-icons/lib/esm/components/Bell24Regular"
 // import { Calendar24Regular } from "@fluentui/react-icons/lib/esm/components/Calendar24Regular"
-import { ReminderTimeIcon } from "@fluentui/react-icons-mdl2";
+// import { ReminderTimeIcon } from "@fluentui/react-icons-mdl2";
 
 
 import { Text, Callout, DirectionalHint } from "@fluentui/react"

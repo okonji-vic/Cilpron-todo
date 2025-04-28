@@ -31,26 +31,26 @@ const Calendar: React.FC<CalendarProps> = ({ todos, onDateSelect, selectedDate }
   }, [todos])
 
   // Custom renderer for calendar day
-  const onRenderDayCallback = (date: Date, dayProps: any): JSX.Element => {
-    const dateKey = formatDateKey(date)
-    const todoCount = todoDates[dateKey] || 0
+  // const onRenderDayCallback = (date: Date, dayProps: any): JSX.Element => {
+  //   const dateKey = formatDateKey(date)
+  //   const todoCount = todoDates[dateKey] || 0
 
-    // Check if this date is the selected date
-    const isSelected =
-      selectedDate &&
-      date.getDate() === selectedDate.getDate() &&
-      date.getMonth() === selectedDate.getMonth() &&
-      date.getFullYear() === selectedDate.getFullYear()
+  //   // Check if this date is the selected date
+  //   const isSelected =
+  //     selectedDate &&
+  //     date.getDate() === selectedDate.getDate() &&
+  //     date.getMonth() === selectedDate.getMonth() &&
+  //     date.getFullYear() === selectedDate.getFullYear()
 
-    return (
-      <div
-        className={`${styles.calendarDay} ${todoCount > 0 ? styles.hasTodos : ""} ${isSelected ? styles.selected : ""}`}
-      >
-        <span>{date.getDate()}</span>
-        {todoCount > 0 && <span className={styles.todoIndicator}>{todoCount}</span>}
-      </div>
-    )
-  }
+  //   return (
+  //     <div
+  //       className={`${styles.calendarDay} ${todoCount > 0 ? styles.hasTodos : ""} ${isSelected ? styles.selected : ""}`}
+  //     >
+  //       <span>{date.getDate()}</span>
+  //       {todoCount > 0 && <span className={styles.todoIndicator}>{todoCount}</span>}
+  //     </div>
+  //   )
+  // }
 
   const handleSelectDate = (date: Date | null | undefined): void => {
     onDateSelect(date || null)
@@ -70,13 +70,15 @@ const Calendar: React.FC<CalendarProps> = ({ todos, onDateSelect, selectedDate }
           </button>
         )}
       </div>
+      
+      
 
       <div className={styles.calendarWrapper}>
         <FluentCalendar
           onSelectDate={handleSelectDate}
           value={selectedDate || undefined}
           firstDayOfWeek={DayOfWeek.Sunday}
-          onRenderDay={onRenderDayCallback}
+          // onRenderDay={onRenderDayCallback}
           showGoToToday={true}
           showMonthPickerAsOverlay={true}
           highlightSelectedMonth={true}
