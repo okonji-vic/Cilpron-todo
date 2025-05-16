@@ -44,5 +44,9 @@
     .headerTitle {
       font-size: 15px;
     }
+
+    .headerActions {
+      gap: 8px;
+    }
   }
   
