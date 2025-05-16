@@ -45,7 +45,10 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
-        <Text variant="xxLarge" className={styles.headerTitle}>
+        <Text
+          // variant="xxLarge"
+          className={styles.headerTitle}
+        >
           {getCategoryLabel()}
         </Text>
         <div className={styles.headerActions}>
