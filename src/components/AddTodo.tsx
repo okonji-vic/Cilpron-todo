@@ -9,9 +9,11 @@ import styles from "./AddTodo.module.css"
 interface AddTodoProps {
   onAddTodo: (title: string, dueDate: Date | null, priority: Priority, category: TodoCategory) => void
   activeCategory: TodoCategory
+  message?: string | null
+  setMessage?: React.Dispatch<React.SetStateAction<string | null>>
 }
 
-const AddTodo: React.FC<AddTodoProps> = ({ onAddTodo, activeCategory }) => {
+const AddTodo: React.FC<AddTodoProps> = ({ onAddTodo, activeCategory,message, setMessage }) => {
   const [title, setTitle] = useState("")
   const [dueDate, setDueDate] = useState<Date | null>(null)
   const [priority, setPriority] = useState<Priority>("medium")
@@ -26,12 +28,20 @@ const AddTodo: React.FC<AddTodoProps> = ({ onAddTodo, activeCategory }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
+    if (activeCategory === "planned" && !dueDate) {
+      setMessage?.("Please select a due date for planned tasks.")
+      return
+    }
+
+
+setMessage?.("Task added successfully!") // Set success message
     if (title.trim()) {
       onAddTodo(title, dueDate, priority, activeCategory)
       setTitle("")
       setDueDate(null)
       setPriority("medium")
       setIsExpanded(false)
+      // setMessage?.(null) // Clear the message after successful submission
     }
   }
 

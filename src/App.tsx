@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
-import { initializeIcons } from "@fluentui/react"
+import { Dialog, initializeIcons,DialogType, } from "@fluentui/react"
 import TodoList from "./components/TodoList"
 import AddTodo from "./components/AddTodo"
 import Filters, { type FilterType } from "./components/Filters"
@@ -39,6 +39,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [activeCategory, setActiveCategory] = useState<TodoCategory>("tasks")
+  const [message, setMessage] = useState<string | null>(null)
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1)
@@ -76,7 +77,7 @@ function App() {
     const counts: Record<string, number> = {
       myday: 0,
       important: 0,
-      planned: 0,
+      // planned: 0,
       assigned: 0,
       tasks: 0,
       home: 0,
@@ -85,6 +86,8 @@ function App() {
       travel: 0,
       movies: 0,
     }
+
+    const plannedCount = todos.filter((todo) => todo.dueDate).length
 
     // Initialize counts for custom categories
     customCategories.forEach((category) => {
@@ -102,9 +105,9 @@ function App() {
         }
 
         // Count planned todos separately
-        if (todo.dueDate) {
-          counts.planned++
-        }
+        // if (todo.dueDate) {
+        //   counts.planned++ 
+        // }
 
         // Count today's todos for My Day
         const today = new Date()
@@ -121,7 +124,11 @@ function App() {
       }
     })
 
-    return counts
+    // return counts
+    return {
+      ...counts,
+      planned: plannedCount,
+    }
   }
 
   // Add a new todo
@@ -279,6 +286,16 @@ function App() {
     setUser(null)
   }
 
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage?.(null)
+      }, 4000)
+      return () => clearTimeout(timer)
+    }
+  }, [message, setMessage])
+
+
   return (
     <ErrorBoundary
       FallbackComponent={FallbackComponent}
@@ -316,7 +333,12 @@ function App() {
       <main className={styles.mainContent}>
         <div className={styles.contentWrapper}>
           <div className={styles.todoSection}>
-            <AddTodo onAddTodo={handleAddTodo} activeCategory={activeCategory} />
+                  <AddTodo
+                    onAddTodo={handleAddTodo}
+                    activeCategory={activeCategory}
+                    message={message}
+                    setMessage={setMessage}
+                  />
 
             <div className={styles.filterRow}>
               <Filters
@@ -360,7 +382,30 @@ function App() {
           </div>
         } />
         <Route path="*" element={<Custom404 />} />
-        </Routes>
+      </Routes>
+      <Dialog
+        hidden={!message}
+        onDismiss={() => setMessage?.(null)}
+        dialogContentProps={{
+          type: DialogType.normal,
+          title: "Notification",
+          subText: message || "",
+        }}
+        modalProps={{
+          isBlocking: false,
+          styles: {
+            main: {
+              top: "10px", // Push dialog to the top
+              position: "absolute",
+              margin: "0 auto",
+              width: 'fit-content',
+              backgroundColor: "#fff9e5",
+              border: "1px solid #ffd966",
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)",
+            },
+          },
+        }}
+      />
     </ErrorBoundary>
       
   )
