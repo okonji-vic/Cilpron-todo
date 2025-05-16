@@ -35,8 +35,8 @@ A comprehensive Todo application built with React and TypeScript, featuring a mo
 
 1. Clone the repository:
 \`\`\`bash
-git clone https://github.com/yourusername/taskmanager.git
-cd taskmanager
+git clone https://github.com/okonji-vic/Cilpron-todo.git
+cd Cilpron-todo
 \`\`\`
 
 2. Install dependencies:
