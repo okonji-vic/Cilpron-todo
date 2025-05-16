@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <Text
-          // variant="xxLarge"
+          variant="large"
           className={styles.headerTitle}
         >
           {getCategoryLabel()}
