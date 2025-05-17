@@ -9,7 +9,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    padding: 0 16px 0 60px; /* Space for hamburger menu */
+    padding: 0 16px 0 40px; /* Space for hamburger menu */
   }
   
   .headerContent {
@@ -19,6 +19,8 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    /* border: 1px solid red; */
+    
   }
   
   .headerTitle {
@@ -26,6 +28,7 @@
     color: white;
     margin: 0;
     font-size: 28px;
+    
   
     
   }
@@ -46,7 +49,8 @@
     }
 
     .headerActions {
-      gap: 8px;
+      gap: 4px;
+      /* border: 1px solid red; */
     }
   }
   

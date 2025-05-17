@@ -7,8 +7,17 @@
   .signInButton {
     margin-left: auto;
   }
+
+  .signOutButton {
+   /* border: 1px solid red; */
+   width: 10px!important;
+   padding: 0!important;
+  }
+  
   
   .dialogInput {
     margin-bottom: 16px;
   }
+
+
   

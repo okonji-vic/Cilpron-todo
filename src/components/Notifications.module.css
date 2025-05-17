@@ -4,12 +4,13 @@
   
   .notificationButton {
     position: relative;
-    padding: 8px;
+    padding: 3px;
     border-radius: 50%;
-    background: none;
+    background: #6ca7d4;
     border: none;
     cursor: pointer;
     transition: background-color 0.2s;
+    margin-right: 10px;
   }
   
   .notificationButton:hover {
@@ -24,8 +25,8 @@
   
   .notificationBadge {
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: -12px;
+    right: -12px;
     background-color: #ef4444;
     color: white;
     font-size: 12px;

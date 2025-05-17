@@ -42,7 +42,12 @@ const UserAuth: React.FC<UserAuthProps> = ({ user, onLogin, onLogout }) => {
     return (
       <Stack horizontal tokens={{ childrenGap: 10 }} verticalAlign="center" className={styles.userInfo}>
         <Persona text={user.name} secondaryText={user.email} size={PersonaSize.size32} />
-        <DefaultButton onClick={onLogout} text="Sign Out" />
+        <DefaultButton
+          onClick={onLogout}
+          text="Sign Out"
+          className={styles.signOutButton}
+
+        />
       </Stack>
     )
   }
